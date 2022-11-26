@@ -31,7 +31,7 @@ if(!user){
             setState(true)
           }
           else{
-            navigate('/login')
+            navigate('/hamberger/login')
           }
         }} display={state}/>
         <FormCheckOut setState={() => setState(false)} display={state}/>

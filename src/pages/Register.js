@@ -4,7 +4,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import axiosClient from '../MyAxios/Axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
 
 export default function Register() {
@@ -18,7 +18,7 @@ export default function Register() {
         if(data && data.status === 201){
             localStorage.setItem(LOCALSTORED_KEY,JSON.stringify({name : data.data.name,username : data.data.username}))
             alert("register success")
-            navigate('/')
+            navigate('/hamberger/')
         }
       },
       onError : (data) => {
@@ -53,7 +53,9 @@ export default function Register() {
           <Typography flex={1}>Have an account ?</Typography>
           <div style={{width : '200px' , background : 'black' , height : '2px'}}></div>
       </Stack>
-      <Button variant='contained' >Login</Button>
+     <Link to='/hamberger/login'>
+     <Button variant='contained' >Login</Button>
+     </Link>
       </Stack>
     </form>
     </Paper>

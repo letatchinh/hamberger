@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import DefaultPage from './pages/DefaultPage';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
@@ -9,12 +11,13 @@ function App() {
 
   return (
     <div className="App">
+    <p>test</p>
       <Routes>
-        <Route path='/hamberger' element={<DefaultPage />}>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/' element={<HomePage />}/>
-          <Route path='/register' element={<Register />}/>
-          <Route path='/orders' element={<MyOrder />}/>
+        <Route path='/hamberger/' element={<DefaultPage />}>
+          <Route path='/hamberger/login' element={<Login />}/>
+          <Route path='/hamberger/' element={<HomePage />}/>
+          <Route path='/hamberger/register' element={<Register />}/>
+          <Route path='/hamberger/orders' element={<MyOrder />}/>
         </Route>
       </Routes>
     </div>

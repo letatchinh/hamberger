@@ -26,7 +26,7 @@ export default function MyOrder() {
     <Typography variant='h4'>My Order</Typography>
         {isLoading ? <div>...loading</div> : data && data.data.arrResponse.length === 0 ? <Stack alignItems='center' spacing={1}>
             <Typography>Ops You don't have any orders yet </Typography>
-            <Button sx={{width : '150px'}} variant='outlined' onClick={() => navigate('/')}>Go Order</Button>
+            <Button sx={{width : '150px'}} variant='outlined' onClick={() => navigate('/hamberger/')}>Go Order</Button>
         </Stack>  :<Stack alignItems='center'>
         <table className='MyTable'>
         <thead>

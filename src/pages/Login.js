@@ -4,7 +4,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import axiosClient from '../MyAxios/Axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
 
 export default function Login() {
@@ -16,7 +16,7 @@ export default function Login() {
       },
       onSuccess : (data) => {
        localStorage.setItem(LOCALSTORED_KEY,JSON.stringify({id : data.data.id , name : data.data.name}))
-       navigate('/')
+       navigate('/hamberger/')
       },
       onError : (data) => {
         alert(data.response.data.message)
@@ -46,7 +46,10 @@ export default function Login() {
           <Typography flex={1}>Or</Typography>
           <div style={{width : '200px' , background : 'black' , height : '2px'}}></div>
       </Stack>
+      <Link to='/hamberger/register'>
       <Button variant='contained' >Register</Button>
+      </Link>
+    
       </Stack>
     </form>
     </Paper>
