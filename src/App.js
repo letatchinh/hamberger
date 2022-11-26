@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/newCloneBurger' element={<DefaultPage />}>
+        <Route path='/hamberger' element={<DefaultPage />}>
           <Route path='/login' element={<Login />}/>
           <Route path='/' element={<HomePage />}/>
           <Route path='/register' element={<Register />}/>
