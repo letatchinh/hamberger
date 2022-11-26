@@ -24,7 +24,6 @@ export default function Header() {
         <Container>
         <Stack direction='row' alignItems='center' justifyContent='space-between'>
         <Link to='/newCloneBurger'>
-        
         <Typography>Burger Builder</Typography>
         </Link>
         <Stack display = {user ? 'flex' : 'none'} direction='row' justifyContent='space-between' alignItems='center' spacing={1}>
