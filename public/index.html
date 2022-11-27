@@ -27,10 +27,8 @@
     <title>React App</title>
   </head>
   <body>
-    <!-- Messenger Plugin chat Code -->
     <div id="fb-root"></div>
 
-    <!-- Your Plugin chat code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
@@ -40,12 +38,13 @@
       chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
-    <!-- Your SDK code -->
     <script>
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,
-          version          : 'v15.0'
+          version          : 'v15.0',
+          cookie     : true,
+          appId      : '1144177066460530',
         });
       };
 
@@ -56,6 +55,7 @@
         js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+      
     </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

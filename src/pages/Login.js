@@ -6,8 +6,10 @@ import { useForm } from 'react-hook-form';
 import axiosClient from '../MyAxios/Axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
+import FacebookLogin from 'react-facebook-login';
 
 export default function Login() {
+  
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
     const {mutate , isLoading} = useMutation({
@@ -29,6 +31,10 @@ export default function Login() {
       password : data.password
     }))
   }
+  
+  const responseFacebook = (response) => {
+    console.log(response);
+  }
   return (
     <Paper sx={{width : '40%' , margin : '50px auto' }} elevation={3}>
 <form  style={{padding : '10px'}} onSubmit={handleSubmit(onSubmit)}>
@@ -49,7 +55,12 @@ export default function Login() {
       <Link to='/hamberger/register'>
       <Button variant='contained' >Register</Button>
       </Link>
-    
+      <FacebookLogin
+    appId="1144177066460530"
+    // autoLoad={true}
+    fields="name,email,picture"
+    // onClick={componentClicked}
+    callback={responseFacebook} />
       </Stack>
     </form>
     </Paper>
