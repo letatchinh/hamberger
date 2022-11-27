@@ -1,15 +1,15 @@
 import { Button, Paper, Stack, TextField, Typography } from '@mui/material'
 import { useMutation } from '@tanstack/react-query';
 import LoadingButton from '@mui/lab/LoadingButton';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import axiosClient from '../MyAxios/Axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
 import FacebookLogin from 'react-facebook-login';
-
+import {GoogleLogin,GoogleLogout} from 'react-google-login'
 export default function Login() {
-  
+  const clientId = "901334910600-93hu25vc1mn46buohj0amfm23u792rvp.apps.googleusercontent.com"
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
     const {mutate , isLoading} = useMutation({
@@ -25,6 +25,11 @@ export default function Login() {
       }
       
     })
+    // useEffect(() => {
+    //   google.accounts.id.initialize({
+
+    //   })
+    // },[])
   const onSubmit = (data) =>{
     mutate(JSON.stringify({
       username : data.username,
@@ -35,6 +40,13 @@ export default function Login() {
   const responseFacebook = (response) => {
     console.log(response);
   }
+  const onLoginSuccess = (res) => {
+    console.log('Login Success:', res.profileObj);
+
+};
+const onLoginFailure = (res) => {
+  console.log('Login Failed:', res);
+};
   return (
     <Paper sx={{width : '40%' , margin : '50px auto' }} elevation={3}>
 <form  style={{padding : '10px'}} onSubmit={handleSubmit(onSubmit)}>
@@ -57,10 +69,16 @@ export default function Login() {
       </Link>
       <FacebookLogin
     appId="1144177066460530"
-    // autoLoad={true}
     fields="name,email,picture"
-    // onClick={componentClicked}
     callback={responseFacebook} />
+     <GoogleLogin
+    clientId={clientId}
+    buttonText="Login"
+    onSuccess={onLoginSuccess}
+    onFailure={onLoginFailure}
+    cookiePolicy={'single_host_origin'}
+    isSignedIn={true}
+  />
       </Stack>
     </form>
     </Paper>
