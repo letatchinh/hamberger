@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,7 +18,9 @@ root.render(
    <Provider store={store}>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+      <GoogleOAuthProvider clientId="901334910600-93hu25vc1mn46buohj0amfm23u792rvp.apps.googleusercontent.com">
         <App />
+        </GoogleOAuthProvider>
       </BrowserRouter>
     </QueryClientProvider>
     </Provider>
