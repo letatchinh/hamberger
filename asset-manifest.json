@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hamberger/static/css/main.434689f2.css",
-    "main.js": "/hamberger/static/js/main.13066d17.js",
+    "main.js": "/hamberger/static/js/main.a70121c5.js",
     "static/js/787.e59faaf5.chunk.js": "/hamberger/static/js/787.e59faaf5.chunk.js",
     "index.html": "/hamberger/index.html",
     "main.434689f2.css.map": "/hamberger/static/css/main.434689f2.css.map",
-    "main.13066d17.js.map": "/hamberger/static/js/main.13066d17.js.map",
+    "main.a70121c5.js.map": "/hamberger/static/js/main.a70121c5.js.map",
     "787.e59faaf5.chunk.js.map": "/hamberger/static/js/787.e59faaf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.434689f2.css",
-    "static/js/main.13066d17.js"
+    "static/js/main.a70121c5.js"
   ]
 }
