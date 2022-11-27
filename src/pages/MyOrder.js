@@ -35,10 +35,6 @@ export default function MyOrder() {
             <td>
                 <Stack direction='row' justifyContent='space-between' alignItems='center'>
                 <Typography>Price</Typography>
-                {/* <Stack>
-                    <ArrowDropUpIcon onClick={() => setPage(page-1)} sx={{cursor : 'pointer' , display : page === 1 ? 'none' : 'block'}}/>
-                    <ArrowDropDownIcon onClick={() => setPage(page+1)} sx={{cursor : 'pointer'}}/>
-                </Stack> */}
                 </Stack>
             </td>
         </tr>

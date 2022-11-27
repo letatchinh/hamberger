@@ -8,6 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
 
 export default function Register() {
+  let a = document.getElementById('fb-customer-chat')
+  
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
     const {mutate , isLoading} = useMutation({

@@ -10,9 +10,8 @@ import FacebookLogin from 'react-facebook-login';
 import jwt_decode from "jwt-decode";
 
 import { GoogleLogin } from '@react-oauth/google';
-export default function Login() {
-  const clientId = "901334910600-93hu25vc1mn46buohj0amfm23u792rvp.apps.googleusercontent.com"
 
+export default function Login() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
@@ -62,7 +61,7 @@ export default function Login() {
       <Button variant='contained' >Register</Button>
       </Link>
       <FacebookLogin
-    appId="1144177066460530"
+    appId={process.env.REACT_APP_APP_ID_FB}
     fields="name,email,picture"
     callback={responseFacebook} />
 <GoogleLogin
