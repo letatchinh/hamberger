@@ -46,7 +46,7 @@ export default function Login() {
       <Stack spacing={2} alignItems='center'>
         <Typography variant='h6'>Sign In</Typography>
       <TextField error={errors && errors.username !== undefined} helperText={errors.username && "User name must be Require"} fullWidth label='Username' variant="outlined"  {...register("username",{required : true})} />
-      <TextField error={errors && errors.password !== undefined} helperText={errors.password && "Password must be Require"} fullWidth label='Password' variant="outlined" {...register("password",{required : true})} />
+      <TextField type='password' error={errors && errors.password !== undefined} helperText={errors.password && "Password must be Require"} fullWidth label='Password' variant="outlined" {...register("password",{required : true})} />
       {errors.exampleRequired && <span>This field is required</span>}
       {isLoading ? 
       <LoadingButton loading variant="outlined">
@@ -60,7 +60,7 @@ export default function Login() {
       <Link to='/hamberger/register'>
       <Button variant='contained' >Register</Button>
       </Link>
-      <FacebookLogin
+      {/* <FacebookLogin
     appId={process.env.REACT_APP_APP_ID_FB}
     fields="name,email,picture"
     callback={responseFacebook} />
@@ -71,7 +71,7 @@ export default function Login() {
   }}
   onError={() => {
     console.log('Login Failed');
-  }}/>
+  }}/> */}
       </Stack>
     </form>
     </Paper>

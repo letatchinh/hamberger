@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { LOCALSTORED_KEY } from '../constant/urlConstant';
 
 export default function Register() {
+  
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
     const {mutate , isLoading} = useMutation({

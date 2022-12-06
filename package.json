@@ -1,6 +1,5 @@
 {
   "name": "burgerdemo",
-  "homepage": "https://letatchinh.github.io/hamberger",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +15,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
+    "cra-append-sw": "^2.7.0",
     "express": "^4.18.2",
     "firebase": "^9.14.0",
     "gh-pages": "^4.0.0",
@@ -24,12 +24,25 @@
     "react-dom": "^18.2.0",
     "react-facebook-login": "^4.1.1",
     "react-hook-form": "^7.39.5",
+    "react-moment": "^1.1.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "uuid": "^9.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,5 +73,8 @@
   "engines": {
     "node": "v16.8.0",
     "npm": "7.21.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

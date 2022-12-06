@@ -10,9 +10,11 @@ import axiosClient from '../MyAxios/Axios'
 import { addUser } from '../redux/userSlice'
 import {  toast } from 'react-toastify';
 import { resetBurger } from '../redux/burgerSlice'
+import { subscribeUser } from '../subscription'
 
 export default function FormCheckOut({display,setState}) {
     const [user,setUser] = useState({})
+    const sw = navigator.serviceWorker;
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
     const order = useSelector(state => state.burger.order)
     const price = useSelector(state => state.burger.totalBill)
@@ -23,10 +25,15 @@ export default function FormCheckOut({display,setState}) {
         return axiosClient.post('api/addOrder', orders)
       },
       onSuccess : () => {
+        subscribeUser()
+        // if (sw?.controller) {
+        //   sw.controller.postMessage("ádsad");
+        // }
         setState();
         notify();
         dispatch(resetBurger())
         reset();
+      
       },
       onError : (data) => {
         alert(data.response.data.message)
@@ -42,14 +49,16 @@ export default function FormCheckOut({display,setState}) {
       
     },[dispatch,reset])
     const onSubmit = (data) =>{
+      const timeStamp = Date.now()
         const newOrder = {
             idUser : user.id,
             order ,
             price,
-            contact : data
+            contact : data,
+            timeStamp
           }
         mutate(JSON.stringify(newOrder))
-       
+      //  console.log(2022-12-04T21:51:21+07:00);
       }
   return (
     <Stack display={display ? 'flex' : 'none'} padding='10px' borderRadius='10px' border='1px solid black' spacing={1}>

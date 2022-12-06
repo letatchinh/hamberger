@@ -7,7 +7,7 @@ const initialState = {
     cheese : 0,
     meat : 0
     }
-
+    
 }
  export const burgerSlice = createSlice({
    name : 'burgerSlice',
@@ -29,6 +29,7 @@ const initialState = {
     cheese : 0,
     meat : 0
           }
+          state.totalBill = 2
         } 
       
      }

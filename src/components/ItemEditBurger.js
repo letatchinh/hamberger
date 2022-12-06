@@ -3,7 +3,6 @@ import { Stack } from '@mui/system'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrementByAmount, incrementByAmount } from '../redux/burgerSlice'
-
 export default function ItemEditBurger({name,price}) {
   const dispatch = useDispatch()
   const count = useSelector((state) => state.burger.order[name])
